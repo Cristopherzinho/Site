@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nome e Nacionalidade</title>
+</head>
+<body>
+    <h1>Nome e Nacionalidade</h1>
+    
+    <p>Digite seu nome:</p>
+    <input type="text" id="nome">
+    <br>
+    
+    <p>Digite seu país:</p>
+    <input type="text" id="pais">
+    <br>
+    
+    <button onclick="calcular()">Enviar</button>
+    
+    <p id="resultado"></p>
+
+    <script>
+        function calcular() {
+            var nome = document.getElementById('nome').value.trim();
+            var pais = document.getElementById('pais').value.trim().toLowerCase();
+            var resultadoDiv = document.getElementById('resultado');
+            
+            if (nome && pais) {
+                if (pais === 'brasil' || pais === 'brazil') {
+                    resultadoDiv.textContent = "Seu nome é: " + nome + " e você é brasileiro(a).";
+                } else {
+                    resultadoDiv.textContent = "Seu nome é: " + nome + " e você é estrangeiro(a).";
+                }
+            } 
+        }
+    </script>
+</body>
+</html>
